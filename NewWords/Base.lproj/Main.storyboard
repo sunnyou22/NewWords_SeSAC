@@ -108,7 +108,6 @@
                     </view>
                     <connections>
                         <outlet property="descriptionNewWords" destination="iTh-Uf-26P" id="GFY-P4-LeK"/>
-                        <outlet property="test" destination="urI-Tb-ihn" id="54V-6v-FLV"/>
                         <outlet property="textField" destination="dwy-o4-6m6" id="ENN-1d-eko"/>
                         <outletCollection property="hashTagBtns" destination="urI-Tb-ihn" collectionClass="NSMutableArray" id="aki-4p-unh"/>
                         <outletCollection property="hashTagBtns" destination="zVB-cP-1O8" collectionClass="NSMutableArray" id="uJq-Cl-rTw"/>
