@@ -57,6 +57,4 @@ class ViewController: UIViewController {
         searchNewWords(textField)
         textField.endEditing(true)
     }
-    
-    
 }
