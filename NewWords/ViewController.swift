@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             if i.key == words.text {
                 descriptionNewWords.text = i.value
             } else {
-                descriptionNewWords.text = "시스템 오류입니다."
+                descriptionNewWords.text = "시스템 오류입니다😓"
             }
         }
     }
