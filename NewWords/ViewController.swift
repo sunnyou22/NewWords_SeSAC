@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var hashTagBtns: [UIButton]!
     @IBOutlet weak var descriptionNewWords: UILabel!
-    @IBOutlet weak var test: UIButton!
     
     var newWordList: Dictionary<String, String> = ["삼귀자": "연애를 시작하기 전 썸 단계!"]
     
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
         textField.keyboardType = .default
         
         makeBtnUI(hashTagBtns)
-      
+        
     }
     
     func searchNewWords(_ words: UITextField) {
@@ -48,7 +47,7 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
- // 아래 둘은 들어간 함수는 같은데 이벤트가 다르다. 어떻게 통일시키지..
+    // 아래 둘은 들어간 함수는 같은데 이벤트가 다르다. 어떻게 통일시키지..
     @IBAction func searchWords(_ sender: UIButton) {
         searchNewWords(textField)
         view.endEditing(true)
