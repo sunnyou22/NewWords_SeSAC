@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var descriptionNewWords: UILabel!
     @IBOutlet weak var test: UIButton!
     
-    var newWordList: Dictionary<String, String> = ["삼귀자": "연애를 시작하기 전 썸 단계"]
+    var newWordList: Dictionary<String, String> = ["삼귀자": "연애를 시작하기 전 썸 단계!"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
