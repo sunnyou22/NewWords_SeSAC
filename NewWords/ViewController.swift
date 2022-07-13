@@ -40,19 +40,19 @@ class ViewController: UIViewController {
         
     }
     
-   @discardableResult func searchNewWords() -> String {
+   func searchNewWords() -> String {
         // let rawValue = NewWord.RawValue() -> 이건 오류가 안 뜨는데 어떻게 사용하는거지
-        let a = textField.text
-        var b = descriptionNewWords.text
-        
-        switch a {
+        let search = textField.text
+       var searchResult = "나는야 신조어"
+
+       switch search {
         case NewWord.gguanggu.rawValue:
-           b = NewWord.gguanggu.saydescriptionOfNewWord()
+           searchResult = NewWord.gguanggu.saydescriptionOfNewWord()
         case NewWord.samguija.rawValue:
-             b = NewWord.samguija.saydescriptionOfNewWord()
+             searchResult = NewWord.samguija.saydescriptionOfNewWord()
         case NewWord.yungcha.rawValue:
-             b =  NewWord.yungcha.saydescriptionOfNewWord()
-        default: b = "알 수 없는 단어입니다😅"
+             searchResult =  NewWord.yungcha.saydescriptionOfNewWord()
+        default: searchResult = "알 수 없는 단어입니다😅"
         }
         
         /*
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
          }
          }
          */
-        return b!
+        return searchResult
     }
     
     func makeBtnUI(_ button : [UIButton]!) {
@@ -82,12 +82,12 @@ class ViewController: UIViewController {
     
     // 아래 둘은 들어간 함수는 같은데 이벤트가 다르다. 어떻게 통일시키지..
     @IBAction func searchWords(_ sender: UIButton) {
-        searchNewWords()
+        descriptionNewWords.text = searchNewWords()
         view.endEditing(true)
     }
     
     @IBAction func enterExitKeyboard(_ sender: UITextField) {
-        searchNewWords()
+        descriptionNewWords.text = searchNewWords()
         textField.endEditing(true)
     }
 }
