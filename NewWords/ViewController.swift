@@ -7,16 +7,27 @@
 
 import UIKit
 
-enum NewWordsList: String {
-    case 융차 = "안녕"
+enum NewWord: String {
+    case gguanggu = "꾸안꾸"
+    case yungcha = "윰차"
+    case samguija = "삼귀자"
+    
+    func saydescriptionOfNewWord() -> String {
+        switch self {
+        case .gguanggu:
+            return "꾸민듯~ 안 꾸민듯~ 결국 꾸민 상태"
+        case .yungcha:
+            return "유모차의 줄임말"
+        case .samguija:
+            return "연애를 시작하기 전 썸단계~"
+        }
+    }
 }
 
 class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var hashTagBtns: [UIButton]!
     @IBOutlet weak var descriptionNewWords: UILabel!
-    
-    var newWordList: Dictionary<String, String> = ["삼귀자": "연애를 시작하기 전 썸 단계!"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +40,32 @@ class ViewController: UIViewController {
         
     }
     
-    func searchNewWords(_ words: UITextField) {
-        for i in newWordList {
-            if NewWordsList.융차 == words.text { // 타입매칭이 안돼서 사용할 수 없음
-                descriptionNewWords.text = NewWordsList.융차.rawValue
-            } else {
-                descriptionNewWords.text = "시스템 오류입니다😓"
-            }
+   @discardableResult func searchNewWords() -> String {
+        // let rawValue = NewWord.RawValue() -> 이건 오류가 안 뜨는데 어떻게 사용하는거지
+        let a = textField.text
+        var b = descriptionNewWords.text
+        
+        switch a {
+        case NewWord.gguanggu.rawValue:
+           b = NewWord.gguanggu.saydescriptionOfNewWord()
+        case NewWord.samguija.rawValue:
+             b = NewWord.samguija.saydescriptionOfNewWord()
+        case NewWord.yungcha.rawValue:
+             b =  NewWord.yungcha.saydescriptionOfNewWord()
+        default: b = "알 수 없는 단어입니다😅"
         }
+        
+        /*
+         //MARK: 딕셔너리로 신조어 처리할 때 작성
+         for i in newWordList {
+         if i.key == words.text {
+         descriptionNewWords.text = i.value
+         } else {
+         descriptionNewWords.text = "시스템 오류입니다😓"
+         }
+         }
+         */
+        return b!
     }
     
     func makeBtnUI(_ button : [UIButton]!) {
@@ -53,12 +82,12 @@ class ViewController: UIViewController {
     
     // 아래 둘은 들어간 함수는 같은데 이벤트가 다르다. 어떻게 통일시키지..
     @IBAction func searchWords(_ sender: UIButton) {
-        searchNewWords(textField)
+        searchNewWords()
         view.endEditing(true)
     }
     
     @IBAction func enterExitKeyboard(_ sender: UITextField) {
-        searchNewWords(textField)
+        searchNewWords()
         textField.endEditing(true)
     }
 }
