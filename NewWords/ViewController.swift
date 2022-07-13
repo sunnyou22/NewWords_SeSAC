@@ -80,14 +80,8 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-    // 아래 둘은 들어간 함수는 같은데 이벤트가 다르다. 어떻게 통일시키지..
-    @IBAction func searchWords(_ sender: UIButton) {
+    @IBAction func exitKeyboard(_ sender: Any) {
         descriptionNewWords.text = searchNewWords()
         view.endEditing(true)
-    }
-    
-    @IBAction func enterExitKeyboard(_ sender: UITextField) {
-        descriptionNewWords.text = searchNewWords()
-        textField.endEditing(true)
     }
 }
