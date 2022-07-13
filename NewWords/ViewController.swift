@@ -42,37 +42,40 @@ class ViewController: UIViewController {
     
     func searchNewWords(word: UITextField) {
         // let rawValue = NewWord.RawValue() -> 이건 오류가 안 뜨는데 어떻게 사용하는거지
-//
-//        let search = textField.text
-//       var searchResult = "나는야 신조어"
-//
-//       switch search {
-//        case NewWord.gguanggu.rawValue:
-//           searchResult = NewWord.gguanggu.saydescriptionOfNewWord()
-//        case NewWord.samguija.rawValue:
-//             searchResult = NewWord.samguija.saydescriptionOfNewWord()
-//        case NewWord.yungcha.rawValue:
-//             searchResult =  NewWord.yungcha.saydescriptionOfNewWord()
-//        default: searchResult = "알 수 없는 단어입니다😅"
-//        }
-//       return searchResult
         
+        //MARK: switch 구문 이용
+        //        let search = textField.text
+        //       var searchResult = "나는야 신조어"
+        //
+        //       switch search {
+        //        case NewWord.gguanggu.rawValue:
+        //           searchResult = NewWord.gguanggu.saydescriptionOfNewWord()
+        //        case NewWord.samguija.rawValue:
+        //             searchResult = NewWord.samguija.saydescriptionOfNewWord()
+        //        case NewWord.yungcha.rawValue:
+        //             searchResult =  NewWord.yungcha.saydescriptionOfNewWord()
+        //        default: searchResult = "알 수 없는 단어입니다😅"
+        //        }
+        //       return searchResult
+        
+        //MARK: 딕셔너리로 신조어 처리할 때 작성 - refactor
         let newWordList: [String?: String] = ["꾸안꾸": "꾸민듯 안꾸민듯 꾸민느낌"]
-       
-         //MARK: 딕셔너리로 신조어 처리할 때 작성
+        
         descriptionNewWords.text = newWordList[word.text]
         // 중위연산자
         
-//         for i in newWordList {
-//         if i.key == word.text {
-//         descriptionNewWords.text = i.value
-//         } else {
-//         descriptionNewWords.text = "시스템 오류입니다😓"
-//         }
-//         }
-  
+        //MARK: 딕셔너리로 신조어 처리할 때 작성 - 이전 버전
+        //         for i in newWordList {
+        //         if i.key == word.text {
+        //         descriptionNewWords.text = i.value
+        //         } else {
+        //         descriptionNewWords.text = "시스템 오류입니다😓"
+        //         }
+        //         }
+        
     }
     
+    // 버튼에 매개변수를 설정했으면 꼭 사용하자
     func makeBtnUI(_ button : [UIButton]!) {
         for i in button {
             i.layer.cornerRadius = 13
@@ -86,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func exitKeyboard(_ sender: Any) {
-//        descriptionNewWords.text = searchNewWords()
+        //        descriptionNewWords.text = searchNewWords() -> switch 버전
         searchNewWords(word: textField)
         view.endEditing(true)
     }
