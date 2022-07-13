@@ -22,7 +22,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="enterExitKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Mdc-ZJ-TTc"/>
+                                    <action selector="exitKeyboard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="UyK-cW-XTD"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFA-ci-sSz">
@@ -38,7 +38,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchWords:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBB-sN-Iyw"/>
+                                    <action selector="exitKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EnT-gN-suy"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-7J-oSd">
