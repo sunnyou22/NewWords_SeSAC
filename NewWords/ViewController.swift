@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum NewWordsList: String {
+    case 융차 = "안녕"
+}
+
 class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var hashTagBtns: [UIButton]!
@@ -27,8 +31,8 @@ class ViewController: UIViewController {
     
     func searchNewWords(_ words: UITextField) {
         for i in newWordList {
-            if i.key == words.text {
-                descriptionNewWords.text = i.value
+            if NewWordsList.융차 == words.text { // 타입매칭이 안돼서 사용할 수 없음
+                descriptionNewWords.text = NewWordsList.융차.rawValue
             } else {
                 descriptionNewWords.text = "시스템 오류입니다😓"
             }
