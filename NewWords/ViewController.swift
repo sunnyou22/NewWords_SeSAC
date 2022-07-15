@@ -61,7 +61,9 @@ class ViewController: UIViewController {
         //MARK: 딕셔너리로 신조어 처리할 때 작성 - refactor
         let newWordList: [String?: String] = ["꾸안꾸": "꾸민듯 안꾸민듯 꾸민느낌"]
         
+        if newWordList[word.text] != nil {
         descriptionNewWords.text = newWordList[word.text]
+        } else { descriptionNewWords.text = "알 수 없는 용어입니다." }
         // 중위연산자
         
         //MARK: 딕셔너리로 신조어 처리할 때 작성 - 이전 버전
